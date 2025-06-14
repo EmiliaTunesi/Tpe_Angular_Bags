@@ -1,0 +1,45 @@
+<h2> Lista de carteras</h2>
+<table class="table text-centered">
+    <thead class="table_head">
+        <tr>
+            <th>Imagen</th> 
+            <th>Nombre</th>
+            <th>Material</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Cantidad</th>
+            <th>Compra</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (bag of bags; track bag.id){
+            <tr [class.discount]="bag.discount">
+                <td><img class="img-thumbnail" [src]="bag.image" [alt]="bag.name" width="90" ></td>
+                <td>{{bag.name}}</td>
+                <td>{{bag.material}}</td>
+                <td>{{bag.price |currency}}</td>
+                    @if (bag.stock>0){
+                    <td> {{bag.stock}}</td>
+                    } @else {
+                    <td><span class="badge text-bg-warning"> Sin Stock</span></td>
+                    }
+                <td>
+                    @if(bag.stock){
+                        <app-input-integer [(quantity)]="bag.quantity" [max] = "bag.stock" (maxReached)="maxReached($event)"></app-input-integer> 
+                    }
+                </td>
+                <td>
+                    @if(bag.stock){
+                        <button class="btn btn-primary" (click)="addToCart(bag)" >Comprar</button>
+                    }
+                </td>
+            </tr>
+        }@empty {
+            <tr>
+                <td coldspan="7"> No hay carteras para mostrar</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<app-add-bag (bagAdded)="onBagAdded($event)"></app-add-bag>

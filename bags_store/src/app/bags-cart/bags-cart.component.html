@@ -1,0 +1,20 @@
+<h2> Carrito de compras</h2>
+<table class="table text-centered">
+    <thead class="table_head">
+        <tr>
+               <th>Cartera</th>
+               <th>Cantidad</th>
+        </tr>
+    <tbody>
+         @for (bag of cartList$ | async; track bag.id){
+        <tr>
+            <td>{{bag.name}}</td> 
+        <td>{{bag.quantity}}</td> 
+        </tr>
+    }
+    </tbody>
+  
+
+   
+
+  

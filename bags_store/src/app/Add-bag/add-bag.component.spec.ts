@@ -1,0 +1,1 @@
+import { AddBagComponent } from './add-bag.component';
