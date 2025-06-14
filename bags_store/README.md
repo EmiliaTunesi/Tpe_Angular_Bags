@@ -7,8 +7,13 @@ Agregar una cartera a la lista de carteras en venta por medio del form reactivo 
 
 
 # Para ejecutar
-Un vez clonado de git en la consola de visual studio code, ejecutar npm install y luego ng serve para que funcione
-En StackBlitz
+Un vez clonado de **git** en la consola de visual studio code, ejecutar 
+npm install 
+ng serve para que funcione
+En **StackBlitz** ejecutar:
+cd bags_store
+npm install @angular/cli
+NG_CLI_ANALYTICS=false npx ng serve
 
 # Alumna
 María EMilia Tunesi
