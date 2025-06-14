@@ -8,6 +8,7 @@ Agregar una cartera a la lista de carteras en venta por medio del form reactivo 
 
 # Para ejecutar
 Un vez clonado de **git** en la consola de visual studio code, ejecutar 
+cd bags_store
 npm install 
 ng serve para que funcione
 En **StackBlitz** ejecutar:
